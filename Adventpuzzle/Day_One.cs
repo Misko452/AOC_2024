@@ -59,8 +59,6 @@ namespace Adventpuzzle
             Console.WriteLine("Similarity: " + similarity_score);
             Console.WriteLine("Distance: " + distance);
          
-            
-            //cache = (anglicky)keš
         }
     }
 }
