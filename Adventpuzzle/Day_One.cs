@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,20 +29,38 @@ namespace Adventpuzzle
 
             }
 
-            int o = 0;
-            int p = 0;
+            int distance = 0;
+            int similarity_score = 0;
+            int mul = 0;
 
             left.Sort();
             right.Sort();
 
+            //Total distance
             foreach (int c in left)
             {
                 int a = left.IndexOf(c);
-                o += Math.Abs(c - right[a]);
+                distance += Math.Abs(c - right[a]);
                 Console.WriteLine(c + " x " + right[a]);
             }
 
-            Console.WriteLine(o);
+            foreach (int c in left) {
+                
+                int a = left.IndexOf(c);
+                foreach (int b in right)
+                {
+                    if (b.Equals(c)) mul++;
+                }
+
+                similarity_score += (c * mul);
+                mul = 0;
+            }
+
+            Console.WriteLine("Similarity: " + similarity_score);
+            Console.WriteLine("Distance: " + distance);
+         
+            
+            //cache = (anglicky)keš
         }
     }
 }
