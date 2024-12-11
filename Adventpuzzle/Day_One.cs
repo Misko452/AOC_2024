@@ -15,7 +15,7 @@ namespace Adventpuzzle
 
         public static void Solve()
         {
-            StreamReader sr = new StreamReader("C:\\Users\\uzivatel\\Desktop\\cisla.txt");
+            StreamReader sr = new StreamReader("file\\with\\data\\location\\");
 
             List<int> left = new List<int>();
             List<int> right = new List<int>();
@@ -59,8 +59,6 @@ namespace Adventpuzzle
             Console.WriteLine("Similarity: " + similarity_score);
             Console.WriteLine("Distance: " + distance);
          
-            
-            //cache = (anglicky)keš
         }
     }
 }

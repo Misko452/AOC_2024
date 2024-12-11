@@ -11,8 +11,8 @@ namespace Adventpuzzle
     {
         static void Main(string[] args)
         {
-            Day_One.Solve();
-
+            //Day_One.Solve();
+            Day_two.Solve();
 
             Console.ReadKey();
         }
